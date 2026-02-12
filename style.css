@@ -1,0 +1,100 @@
+/* =========================
+   RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background: radial-gradient(circle at 30% 50%, #1a0000, #000 70%);
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* =========================
+   HERO LAYOUT
+========================= */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8%;
+    gap: 40px;
+}
+
+/* =========================
+   CONTENT
+========================= */
+.content {
+    max-width: 500px;
+}
+
+.content h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 15px;
+}
+
+.content span {
+    color: #ff0000;
+    text-shadow: 0 0 25px rgba(255, 0, 0, 0.6);
+}
+
+.content p {
+    margin-bottom: 25px;
+    opacity: 0.8;
+}
+
+/* BUTTON */
+.iron-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 40px;
+    background: linear-gradient(45deg, #990000, #ff0000);
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.iron-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 0, 0, 0.4);
+}
+
+/* =========================
+   IMAGE
+========================= */
+.image img {
+    height: clamp(300px, 75vh, 850px);
+    width: auto;
+    object-fit: contain;
+    animation: reactorGlow 3s infinite ease-in-out;
+}
+
+/* Subtle Red Glow */
+@keyframes reactorGlow {
+    0% { filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.4)); }
+    50% { filter: drop-shadow(0 0 35px rgba(255, 0, 0, 0.8)); }
+    100% { filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.4)); }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 992px) {
+
+    .hero {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .image img {
+        height: clamp(250px, 55vh, 500px);
+    }
+}
